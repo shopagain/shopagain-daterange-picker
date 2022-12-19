@@ -79,7 +79,7 @@ const Header: React.FunctionComponent<HeaderProps> = ({
   };
 
   return (
-    <Grid container justifyContent="space-between" alignItems="center">
+    <Grid container justify="space-between" alignItems="center">
       <Grid item className={classes.iconContainer}>
         <IconButton
           className={classes.icon}
