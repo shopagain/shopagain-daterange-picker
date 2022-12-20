@@ -92,8 +92,8 @@ const DateRangePicker: React.FunctionComponent<DateRangePickerProps> = (
       setDateRange(range);
       onChange(range);
 
-      setFirstMonth(newStart);
-      setSecondMonth(isSameMonth(newStart, newEnd) ? addMonths(newStart, 1) : newEnd);
+      setFirstMonth(isSameMonth(new Date(), newStart) ? addMonths(new Date(), -1) : newStart);
+      setSecondMonth(isSameMonth(new Date(), newStart) ? new Date() : isSameMonth(newStart, newEnd) ? addMonths(newStart, 1) : newEnd);
     } else {
       const emptyRange = {};
 
@@ -136,10 +136,10 @@ const DateRangePicker: React.FunctionComponent<DateRangePickerProps> = (
 
   // helpers
   const inHoverRange = (day: Date) => (startDate
-      && !endDate
-      && hoverDay
-      && isAfter(hoverDay, startDate)
-      && isWithinRange(day, startDate, hoverDay)) as boolean;
+    && !endDate
+    && hoverDay
+    && isAfter(hoverDay, startDate)
+    && isWithinRange(day, startDate, hoverDay)) as boolean;
 
   const helpers = {
     inHoverRange,

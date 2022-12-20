@@ -1,6 +1,6 @@
 {
 	"name": "shopagain-daterange-picker",
-	"version": "1.1.93",
+	"version": "1.1.95",
 	"description": "A react date range picker implementation using @material-ui.",
 	"author": "jungsoft",
 	"license": "MIT",
